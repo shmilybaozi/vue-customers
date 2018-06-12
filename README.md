@@ -24,7 +24,7 @@
   - [:pineapple: 提示信息组件CustomersAlert](#提示信息组件customersalert)
   - [:sweet_potato: 用户详情组件CustomersDetails](#用户详情组件customersdetails)
   - [:eggplant: 用户信息编辑组件CustomersEdit](#用户信息编辑组件customersedit)
-  - [:tomato: 实现搜索功能：CustomersList组件](#实现搜索功能：customerslist组件)
+  - [:tomato: 实现搜索功能：CustomersList组件](#实现搜索功能customerslist组件)
 
 ---
 
