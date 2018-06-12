@@ -6,23 +6,25 @@
 
 点击:heartbeat:回到目录
 
-[:apple: 启动项目](#BuildSetup)
-[:tangerine: JSON Server搭建本地数据接口](#JSONServer搭建本地数据接口)
+[:apple: 启动项目](#build-setup)
+
+[:tangerine: JSON Server搭建本地数据接口](#json-server-搭建本地数据接口)
+
 [:lemon: 用户管理系统项目小总结](#用户管理系统项目小总结)
 
 - [:cherries: 项目初始化的时候就使用路由](#项目初始化的时候就使用路由)
-- [:grapes: 在vue项目中使用bootstrap](#在vue项目中使用bootstrap)
+- [:grapes: 在vue项目中使用bootstrap](#在-vue-项目中使用-bootstrap)
 - [:watermelon: 配置vue-axios](#配置vue-axios)
 - [:strawberry: 设置模板文件](#设置模板文件)
 - [:peach: 实现各个页面之间的跳转](#实现各个页面之间的跳转)
 
-  - [:melon: 导航栏中`主页`，`关于我们`，`添加用户`都用路由实现跳转](#导航栏中`主页`，`关于我们`，`添加用户`都用路由实现跳转)
-  - [:banana: 主页组件CustomersList](#主页组件CustomersList)
-  - [:pear: 添加用户组件CustomersAdd](#添加用户组件CustomersAdd)
-  - [:pineapple: 提示信息组件CustomersAlert](#提示信息组件CustomersAlert)
-  - [:sweet_potato: 用户详情组件CustomersDetails](#用户详情组件CustomersDetails)
-  - [:eggplant: 用户信息编辑组件CustomersEdit](#用户信息编辑组件CustomersEdit)
-  - [:tomato: 实现搜索功能：CustomersList组件](#实现搜索功能：CustomersList组件)
+  - [:melon: 导航栏中`主页`，`关于我们`，`添加用户`都用路由实现跳转](#导航栏中主页关于我们添加用户都用路由实现跳转)
+  - [:banana: 主页组件CustomersList](#主页组件customerslist)
+  - [:pear: 添加用户组件CustomersAdd](#添加用户组件customersadd)
+  - [:pineapple: 提示信息组件CustomersAlert](#提示信息组件customersalert)
+  - [:sweet_potato: 用户详情组件CustomersDetails](#用户详情组件customersdetails)
+  - [:eggplant: 用户信息编辑组件CustomersEdit](#用户信息编辑组件customersedit)
+  - [:tomato: 实现搜索功能：CustomersList组件](#实现搜索功能：customerslist组件)
 
 ---
 
