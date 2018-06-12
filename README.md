@@ -2,6 +2,28 @@
 
 > A Vue.js project
 
+## 目录
+
+点击:heartbeat:回到目录
+
+[:apple: 启动项目](#BuildSetup)
+[:tangerine: JSON Server搭建本地数据接口](#JSONServer搭建本地数据接口)
+[:lemon: 用户管理系统项目小总结](#用户管理系统项目小总结)
+
+- [:cherries: 项目初始化的时候就使用路由](#项目初始化的时候就使用路由)
+- [:grapes: 在vue项目中使用bootstrap](#在vue项目中使用bootstrap)
+- [:watermelon: 配置vue-axios](#配置vue-axios)
+- [:strawberry: 设置模板文件](#设置模板文件)
+- [:peach: 实现各个页面之间的跳转](#实现各个页面之间的跳转)
+
+  - [:melon: 导航栏中`主页`，`关于我们`，`添加用户`都用路由实现跳转](#导航栏中`主页`，`关于我们`，`添加用户`都用路由实现跳转)
+  - [:banana: 主页组件CustomersList](#主页组件CustomersList)
+  - [:pear: 添加用户组件CustomersAdd](#添加用户组件CustomersAdd)
+  - [:pineapple: 提示信息组件CustomersAlert](#提示信息组件CustomersAlert)
+  - [:sweet_potato: 用户详情组件CustomersDetails](#用户详情组件CustomersDetails)
+  - [:eggplant: 用户信息编辑组件CustomersEdit](#用户信息编辑组件CustomersEdit)
+  - [:tomato: 实现搜索功能：CustomersList组件](#实现搜索功能：CustomersList组件)
+
 ---
 
 ## Build Setup
@@ -21,6 +43,7 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[:heartbeat:](#目录)
 
 ---
 
@@ -53,7 +76,7 @@ npm install json-server --save
 ...
 ```
 
-### 启动JSON Server
+- 启动JSON Server
 
 ```bash
 # 本地数据
@@ -62,6 +85,8 @@ npm run json:server
 # jsonplaceholder数据
 npm run json:server:remote
 ```
+
+[:heartbeat:](#目录)
 
 ---
 
@@ -81,6 +106,8 @@ export default new Router({
   mode: 'history',
 })
 ```
+
+[:heartbeat:](#目录)
 
 ### 在 vue 项目中使用 bootstrap
 
@@ -129,6 +156,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 ```
 
+[:heartbeat:](#目录)
+
 ### 配置[vue-axios](https://github.com/imcvampire/vue-axios)
 
 - 安装
@@ -147,6 +176,8 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 ```
 
+[:heartbeat:](#目录)
+
 ### 设置模板文件
 
 - main.js
@@ -157,6 +188,8 @@ new Vue({
   template: `html模板(包含router-link 和 router-view)`,
 }).$mount("#app")
 ```
+
+[:heartbeat:](#目录)
 
 ### 实现各个页面之间的跳转
 
@@ -177,7 +210,7 @@ new Vue({
     })
     ```
 
-  - 将`<router-link to="/">主页</router-link>`等内容和`<router-view></router-view>`写在html模板中
+  - 将`<router-link to="/">主页</router-link>`等内容和`<router-view></router-view>`写在html模板中[:heartbeat:](#目录)
 
 #### 主页组件CustomersList
 
@@ -207,6 +240,8 @@ new Vue({
       },
     ```
 
+    [:heartbeat:](#目录)
+
 #### 添加用户组件CustomersAdd
 
 - 每一个`input`标签都用`v-model`双向绑定属性`customer.XXX`
@@ -233,7 +268,7 @@ new Vue({
   ```
 
   - 将 对象newCustomers 通过 `post` 方法 传输到接口中
-  - 添加数据，跳转到主页中并弹出提示信息 **this.==$router==.push{path: "/",query:{alert:"添加用户成功!"}})**
+  - 添加数据，跳转到主页中并弹出提示信息 **`this.$route.push{path: "/",query:{alert:"添加用户成功!"}})`**
 
   ```javascript
   this.axios.post('http://localhost:3000/users',newCustomers)
@@ -243,6 +278,8 @@ new Vue({
       this.$router.push({path: "/",query:{alert:"添加用户成功!"}});
     })
   ```
+
+  [:heartbeat:](#目录)
 
 #### 提示信息组件CustomersAlert
 
@@ -258,7 +295,7 @@ props: ["message"],
    <CustomersAlert v-if="alert" :message="alert"/>
   ```
 
-  - alert数据：根据添加或者编辑用户之后传递的query.alert获取 **this.==$route==.query.alert**
+  - alert数据：根据添加或者编辑用户之后传递的query.alert获取 **`this.$route.query.alert`**
 
   ```javascript
   created () {
@@ -269,12 +306,14 @@ props: ["message"],
   },
   ```
 
+  [:heartbeat:](#目录)
+
 #### 用户详情组件CustomersDetails
 
 - CustomersList组件中：点击按钮转跳到对应`id`的用户详情页面中
 
   - 拼接地址注意：
-    - 必须==绑定属性==`:to=""`，即`v-bind:to=""`，不绑定成属性就不能`+ customer.id`变量
+    - 必须绑定属性`:to=""`，即`v-bind:to=""`，不绑定成属性就不能`+ customer.id`变量
     - `'/customer/'`部分和路由设置保持一致
 
     ```html
@@ -285,7 +324,7 @@ props: ["message"],
 
 - CustomersDetails组件中：
 
-  - 获取用户详情：通过**this.==$route==.params.id**获取点击的用户的`id`
+  - 获取用户详情：通过`this.$route.params.id`获取点击的用户的`id`
 
     ```javascript
     created () {
@@ -323,11 +362,13 @@ props: ["message"],
     },
     ```
 
+    [:heartbeat:](#目录)
+
 #### 用户信息编辑组件CustomersEdit
 
 - 类似CustomersAdd组件：不过要把对应`id`的用户信息展示出来再修改确认。
   
-  - 先获取到相应`id`的信息，展示在页面上，通过**this.==$route==.params.id**获取点击的用户的`id`
+  - 先获取到相应`id`的信息，展示在页面上，通过`this.$route.params.id`获取点击的用户的`id`
 
   ```javascript
   created () {
@@ -361,6 +402,8 @@ props: ["message"],
   },
   ```
 
+  [:heartbeat:](#目录)
+
 #### 实现搜索功能：CustomersList组件
 
 - `input`搜索框双向绑定数据`filterInput`
@@ -387,5 +430,7 @@ props: ["message"],
     })
   },
   ```
+
+  [:heartbeat:](#目录)
 
 #### 很多组件中都有 customers 数据(data中有定义)，分清楚是数组还是对象！
